@@ -3,4 +3,4 @@ An Umbraco plugin that allows backoffice users to see what Migrations are instal
 
 ## Special thanks
 
-* @dandiplo & @jeavon for the package creation code
+[Jeavon Leopold](https://github.com/jeavon) & [Dan Diplo](https://github.com/dandiplo) for the package creation code
