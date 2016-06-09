@@ -32,7 +32,7 @@
     <Copyright>Copyright &#169; Jamie Pollock and contributors.</Copyright>
     <Owners>Jamie Pollock</Owners>
     <Description>A backoffice plugin to view Migrations installed on an Umbraco instance</Description>
-    <IconUrl />
+    <IconUrl>https://raw.githubusercontent.com/jamiepollock/Umbraco-MigrationsViewer/master/build/assets/icon/umbraco-migrationsviewer-128.png</IconUrl>
     <Tags>umbraco</Tags>
     <Language>en-GB</Language>
     <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
@@ -123,7 +123,7 @@
       <AppPluginFiles Include="$(WebProjectDir)\App_Plugins\MigrationsViewer\**\*.*" />
       
       <!-- Umbraco specific -->
-      <UmbracoInstallerLogo Include=""/>
+      <UmbracoInstallerLogo Include="$(MSBuildProjectDirectory)\assets\icon\umbraco-migrations-viewer-32.png"/>
       <PackageFile Include="$(MSBuildProjectDirectory)\package.xml" />
       
       <!-- NuGet specific -->
@@ -136,7 +136,7 @@
     <Copy SourceFiles="@(PackageFile)" DestinationFolder="$(BuildUmbDir)" />
     <Copy SourceFiles="@(InstallerBinFiles)" DestinationFolder="$(BuildUmbDir)\bin" />
     <Copy SourceFiles="@(AppPluginFiles)" DestinationFiles="@(AppPluginFiles->'$(BuildUmbDir)\App_Plugins\MigrationsViewer\%(RecursiveDir)%(Filename)%(Extension)')" />
-    <!--<Copy SourceFiles="@(UmbracoInstallerLogo)" DestinationFolder="$(BuildUmbDir)\App_Plugins\MigrationsViewer\Install" />-->
+    <Copy SourceFiles="@(UmbracoInstallerLogo)" DestinationFolder="$(BuildUmbDir)\App_Plugins\MigrationsViewer\Install" />
 
     <!--NuGet -->
     <Copy SourceFiles="@(BinFiles)" DestinationFolder="$(BuildNuGetDir)\lib\net45" />
