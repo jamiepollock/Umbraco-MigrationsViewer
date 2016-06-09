@@ -24,16 +24,6 @@ artifacts:
   - path: artifacts\*.zip
 
 deploy:
-    # Umbraco MyGet community feed
-  - #provider: NuGet
-    #server: https://www.myget.org/F/umbraco-packages/api/v2/package
-    #symbol_server: https://nuget.symbolsource.org/MyGet/umbraco-packages
-    #api_key:
-      #secure: todo
-    #artifact: /.*\.nupkg/
-    #on:
-      #branch: develop
-
     # GitHub Deployment for releases
   - provider: GitHub
     auth_token:
@@ -45,7 +35,7 @@ deploy:
       branch: master
       appveyor_repo_tag: true        # deploy on tag push only
 
-     # NuGet Deployment for releases
+    # NuGet Deployment for releases
   - provider: NuGet
     server:
     api_key:
