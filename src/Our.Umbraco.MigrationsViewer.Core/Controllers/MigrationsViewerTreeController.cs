@@ -16,6 +16,7 @@ namespace Our.Umbraco.MigrationsViewer.Core.Controllers
     [Tree(Constants.Applications.Developer, PluginConstants.Name, PluginConstants.Title)]
     public class MigrationsViewerTreeController : TreeController
     {
+        private const string MigrationNameTreeNodeIcon = "icon-tactics";
         private readonly IMigrationNamesService _service = new DatabaseMigrationNamesService(ApplicationContext.Current.DatabaseContext.Database);
 
         protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
@@ -27,11 +28,11 @@ namespace Our.Umbraco.MigrationsViewer.Core.Controllers
                 throw new NotSupportedException();
             }
 
-            var products = _service.GetUniqueMigrationNames();
+            var migrationNames = _service.GetUniqueMigrationNames();
 
-            foreach (var product in products)
+            foreach (var name in migrationNames)
             {
-                var node = CreateTreeNode(product, id, null, product, "icon-tactics", false);
+                var node = CreateTreeNode(name, id, null, name, MigrationNameTreeNodeIcon, false);
                 nodes.Add(node);
             }
             return nodes;
