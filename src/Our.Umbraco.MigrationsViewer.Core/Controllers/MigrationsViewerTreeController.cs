@@ -5,12 +5,14 @@ using Our.Umbraco.MigrationsViewer.Core.Services;
 using umbraco.BusinessLogic.Actions;
 using Umbraco.Core;
 using Umbraco.Web.Models.Trees;
+using Umbraco.Web.Mvc;
 using Umbraco.Web.Trees;
 using Umbraco.Web.WebApi.Filters;
 
 namespace Our.Umbraco.MigrationsViewer.Core.Controllers
 {
     [UmbracoApplicationAuthorize(Constants.Applications.Developer)]
+    [PluginController(PluginConstants.Name)]
     [Tree(Constants.Applications.Developer, PluginConstants.Name, PluginConstants.Title)]
     public class MigrationsViewerTreeController : TreeController
     {
