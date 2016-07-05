@@ -8,7 +8,6 @@ using Umbraco.Web.WebApi;
 namespace Our.Umbraco.MigrationsViewer.Core.Controllers
 {
     [OutgoingDateTimeFormat]
-    [JsonCamelCaseFormatter]
     public class MigrationsViewerApiController : UmbracoAuthorizedApiController
     {
         [HttpGet]
