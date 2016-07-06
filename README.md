@@ -19,3 +19,7 @@ Raise a ticket on [the project issue tracker](https://github.com/jamiepollock/Um
 ## Special thanks
 
 [Jeavon Leopold](https://github.com/jeavon) & [Dan Diplo](https://github.com/dandiplo) for the package creation code.
+
+## Licensing
+
+This project is licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0).
