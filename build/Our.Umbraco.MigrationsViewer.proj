@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Package">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Package" ToolsVersion="4.0">
 
   <!-- IMPORTS -->
   <PropertyGroup>
@@ -129,6 +129,8 @@
       <!-- NuGet specific -->
       <SrcFiles Include="$(CoreProjectDir)\**\*.cs" Exclude="$(CoreProjectDir)\obj\**"/>
       <NuSpecFile Include="$(MSBuildProjectDirectory)\package.nuspec" />
+
+      <InstallPsFile Include="$(MSBuildProjectDirectory)\Install.ps1" />
     </ItemGroup>
 
     <!-- Umbraco -->
@@ -146,6 +148,7 @@
     <Copy SourceFiles="@(AppPluginFiles)" DestinationFiles="@(AppPluginFiles->'$(BuildNuGetDir)\Content\App_Plugins\MigrationsViewer\%(RecursiveDir)%(Filename)%(Extension)')" />
     <Copy SourceFiles="@(NuSpecFile)" DestinationFolder="$(BuildNuGetDir)" />
 
+		<Copy SourceFiles="@(InstallPsFile)" DestinationFolder="$(BuildNuGetDir)\tools" />
   </Target>
 
   <!-- MANIFEST UMBRACO -->
