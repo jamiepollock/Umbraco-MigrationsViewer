@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco").controller("Our.Umbraco.MigrationsViewer.Controller", function ($scope, $http, $routeParams) {
-    $scope.product = $routeParams.id;
+    $scope.productName = $routeParams.id;
     $scope.sortOptions = {
         propertyName: "CreateDate",
         direction: "Descending"
@@ -9,7 +9,7 @@
         $http.get("/umbraco/backoffice/api/MigrationsViewerApi/Get",
             {
                 params: {
-                    "productName": $routeParams.id,
+                    "productName": $scope.productName,
                     "orderByPropertyName": $scope.sortOptions.propertyName,
                     "orderByDirection": $scope.sortOptions.direction
                 }
