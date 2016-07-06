@@ -29,8 +29,8 @@
                                             <table class="table table-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th><localize key="labels_version"></localize></th>
-                                                        <th><localize key="content_createDate"></localize></th>
+                                                        <th><a ng-click="sort('Version')" class="sortable" prevent-default><localize key="labels_version"></localize><i class="icon" ng-class="{'icon-navigation-up': isSortDirection('Version', 'Ascending'), 'icon-navigation-down': isSortDirection('Version', 'Descending')}"></i></a></th>
+                                                        <th><a ng-click="sort('CreateDate')" class="sortable" prevent-default><localize key="content_createDate"></localize><i class="icon" ng-class="{'icon-navigation-up': isSortDirection('CreateDate', 'Ascending'), 'icon-navigation-down': isSortDirection('CreateDate', 'Descending')}"></i></a></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

@@ -11,7 +11,7 @@ namespace Our.Umbraco.MigrationsViewer.Core.Controllers
     public class MigrationsViewerApiController : UmbracoAuthorizedApiController
     {
         [HttpGet]
-        public IEnumerable<MigrationItem> Get(string productName)
+        public IEnumerable<MigrationItem> Get(string productName, string orderByPropertyName, OrderByDirections orderByDirection)
         {
             var items = Services.MigrationEntryService.GetAll(productName);
 
@@ -21,7 +21,7 @@ namespace Our.Umbraco.MigrationsViewer.Core.Controllers
                 {
                     CreateDate = x.CreateDate,
                     Version = x.Version.ToString()
-                });
+                }).OrderBy(orderByPropertyName, orderByDirection);
             }
 
             return null;
